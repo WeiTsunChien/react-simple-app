@@ -1,5 +1,7 @@
 .site-header {
     border-bottom: 2px solid #ddd;
+    background-color: white;
+    padding: 0 1rem;
 }
 
 .site-header .fa-bars{
@@ -10,4 +12,18 @@
 
 .site-header .fa-bars:hover{
     color:#000000;
+}
+
+.sidebar-wrapper{
+    position: fixed;
+    top: 52px;
+    bottom: 0px;
+    width: 240px;
+    overflow: scroll;
+}
+
+.main-wrapper{
+    margin-left: 240px;
+    position: relative;
+    top: 52px;
 }
