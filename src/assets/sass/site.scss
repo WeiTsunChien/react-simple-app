@@ -1,0 +1,104 @@
+$siteHeaderHeight: 51px;
+$siteFooterHeight: 2.5rem;
+$leftSidebarWidth: 240px;
+$fontColorLight: #f8f9fa;
+$fontColorDark: #212529;
+$bgLight: #f8f9fa;
+$bgDark: #212529;
+$bgGrey: #eee;
+$myBorder: 1px solid #ccc;
+
+html {
+    font-size: 20px;
+    color:$fontColorDark;
+}
+
+body {
+    background-color: #eee;
+}
+
+a {
+    color: $myFontColor;
+}
+
+#site-header {
+    border-bottom: $myBorder;
+    background-color: white;
+    padding: 0 1rem;
+}
+
+#site-header .fa-bars {
+    margin-right: 1rem;
+    color: #555;
+    cursor: pointer;
+}
+
+#site-header .fa-bars:hover {
+    color: black;
+}
+
+#left-sidebar {
+    position: fixed;
+    top: $siteHeaderHeight;
+    bottom: 0;
+    width: $leftSidebarWidth;
+    z-index: 3;
+    border-right: $myBorder;
+    overflow: auto;
+    background-color: white;
+}
+
+#left-sidebar-overlay {
+    position: fixed;
+    top: $siteHeaderHeight;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+#main-wrapper {
+    width: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-top: $siteHeaderHeight;
+    padding-bottom: $siteFooterHeight;
+    margin-left: $leftSidebarWidth;
+    background-color: white;
+}
+
+#main-wrapper .breadcrumb {
+    margin: 0 -15px 0.5rem -15px;
+    padding: 0.5rem 15px;
+    border-radius: unset;
+    background-color: #eee;
+}
+
+#site-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $siteFooterHeight;
+    border-top: $myBorder;
+    padding: 0.5rem 15px;
+    background-color: #eee;
+}
+
+@media (max-width: 991px) {
+    #left-sidebar {
+        display: none;
+    }
+
+    #main-wrapper {
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    #left-sidebar {
+        display: block;
+    }
+}
