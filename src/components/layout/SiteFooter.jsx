@@ -3,7 +3,7 @@ import React from 'react';
 const SiteFooter = () => {
     return (
         <footer id="site-footer">
-            網站頁腳網站頁腳網站頁腳網站頁腳網站頁腳網站頁腳
+            Site Footer - Site Footer - Site Footer - Site Footer - Site Footer - Site Footer - Site Footer - Site Footer
         </footer>
     );
 };

@@ -3,6 +3,7 @@ import SiteHeader from './SiteHeader';
 import LeftSidebar from './LeftSidebar';
 import LeftSidebarOverlay from './LeftSidebarOverlay';
 import Breadcrumb from './Breadcrumb';
+import SiteFooter from './SiteFooter';
 
 const Layout = () => {
     return (
