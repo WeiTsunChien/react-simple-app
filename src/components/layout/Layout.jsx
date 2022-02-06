@@ -31,7 +31,7 @@ const Layout = () => {
                 style={{ marginLeft: showLeftSidebar && innerWidth >= showLeftSidebarWidth ? leftSidebarWidth : 'auto' }}>
                 <Breadcrumb />
                 <main>
-                    <h3 className="page-title">網頁標題</h3>
+                    <h3 className="page-title">首頁</h3>
                     <div className="page-content">
                         <Outlet />
                     </div>
