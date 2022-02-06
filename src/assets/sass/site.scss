@@ -1,29 +1,27 @@
 $siteHeaderHeight: 51px;
 $siteFooterHeight: 2.5rem;
 $leftSidebarWidth: 240px;
-$fontColorLight: #f8f9fa;
-$fontColorDark: #212529;
-$bgLight: #f8f9fa;
-$bgDark: #212529;
-$bgGrey: #eee;
+$fontColorPrimary: black;
+$bgColorPrimary: white;
+$bgColorNotUse: #eee;
 $myBorder: 1px solid #ccc;
 
 html {
     font-size: 20px;
-    color:$fontColorDark;
+    color: $fontColorPrimary;
 }
 
 body {
-    background-color: #eee;
+    background-color: $bgColorNotUse;
 }
 
 a {
-    color: $myFontColor;
+    color: $fontColorPrimary;
 }
 
 #site-header {
     border-bottom: $myBorder;
-    background-color: white;
+    background-color: $bgColorPrimary;
     padding: 0 1rem;
 }
 
@@ -45,7 +43,7 @@ a {
     z-index: 3;
     border-right: $myBorder;
     overflow: auto;
-    background-color: white;
+    background-color: $bgColorPrimary;
 }
 
 #left-sidebar-overlay {
@@ -66,14 +64,15 @@ a {
     padding-top: $siteHeaderHeight;
     padding-bottom: $siteFooterHeight;
     margin-left: $leftSidebarWidth;
-    background-color: white;
+    background-color: $bgColorPrimary;
 }
 
 #main-wrapper .breadcrumb {
     margin: 0 -15px 0.5rem -15px;
     padding: 0.5rem 15px;
     border-radius: unset;
-    background-color: #eee;
+    background-color: $bgColorPrimary;
+    border-bottom: $myBorder;
 }
 
 #site-footer {
@@ -84,7 +83,7 @@ a {
     height: $siteFooterHeight;
     border-top: $myBorder;
     padding: 0.5rem 15px;
-    background-color: #eee;
+    background-color: $bgColorPrimary;
 }
 
 @media (max-width: 991px) {
