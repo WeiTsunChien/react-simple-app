@@ -1,8 +1,11 @@
 import React from 'react';
 
-const LeftSidebar = () => {
+const LeftSidebar = (props) => {
+    const { showLeftSidebar } = props;
+
     return (
-        <nav id="left-sidebar" className="navbar navbar-light">
+        <nav id="left-sidebar" className="navbar navbar-light"
+            style={{ display: showLeftSidebar ? 'block' : 'none' }}>
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <a className="nav-link" href="#">Link 11111</a>

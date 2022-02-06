@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import SiteHeader from './SiteHeader';
 import LeftSidebar from './LeftSidebar';
@@ -6,14 +7,28 @@ import Breadcrumb from './Breadcrumb';
 import SiteFooter from './SiteFooter';
 
 const Layout = () => {
+    const { innerWidth } = window;
+    const showLeftSidebarWidth = 991; //參考 CSS設定
+    const leftSidebarWidth = '240px'; //參考 CSS設定
+    const [showLeftSidebar, setShowLeftSidebar] = useState(innerWidth >= showLeftSidebarWidth);
+
+    const toggleLeftSidebar = () => {
+        setShowLeftSidebar(!showLeftSidebar);
+    }
+
+    console.log("showLeftSidebar", innerWidth, showLeftSidebar);
     return (
         <>
-            <SiteHeader />
+            <SiteHeader toggleLeftSidebar={toggleLeftSidebar} />
             <div id="left-sidebar-wrapper">
-                <LeftSidebar />
-                <LeftSidebarOverlay />
+                <LeftSidebar showLeftSidebar={showLeftSidebar} />
+                <LeftSidebarOverlay
+                    showLeftSidebarWidth={showLeftSidebarWidth}
+                    showLeftSidebar={showLeftSidebar}
+                    toggleLeftSidebar={toggleLeftSidebar} />
             </div>
-            <div id="main-wrapper" className="container-lg">
+            <div id="main-wrapper" className="container-lg"
+                style={{ marginLeft: showLeftSidebar && innerWidth >= showLeftSidebarWidth ? leftSidebarWidth : 'auto' }}>
                 <Breadcrumb />
                 <main>
                     <h3 className="page-title">網頁標題</h3>
