@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
 const LeftSidebar = (props) => {
     const { showLeftSidebar } = props;
@@ -8,70 +9,10 @@ const LeftSidebar = (props) => {
             style={{ display: showLeftSidebar ? 'block' : 'none' }}>
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Link 11111</a>
+                    <NavLink className="nav-link" to="/">首頁</NavLink>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link active" href="#">Link active</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 2</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link 33333</a>
+                    <NavLink className="nav-link" to="/state-todo">State待辦事項</NavLink>
                 </li>
             </ul>
         </nav>

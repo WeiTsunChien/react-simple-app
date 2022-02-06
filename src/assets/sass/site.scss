@@ -19,6 +19,11 @@ a {
     color: $fontColorPrimary;
 }
 
+input[type=checkbox]{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
 #site-header {
     border-bottom: $myBorder;
     background-color: $bgColorPrimary;
