@@ -16,7 +16,6 @@ const Layout = () => {
         setShowLeftSidebar(!showLeftSidebar);
     }
 
-    console.log("showLeftSidebar", innerWidth, showLeftSidebar);
     return (
         <>
             <SiteHeader toggleLeftSidebar={toggleLeftSidebar} />
@@ -27,7 +26,7 @@ const Layout = () => {
                     showLeftSidebar={showLeftSidebar}
                     toggleLeftSidebar={toggleLeftSidebar} />
             </div>
-            <div id="main-wrapper" className="container-lg"
+            <div id="main-wrapper" className="container-fluid"
                 style={{ marginLeft: showLeftSidebar && innerWidth >= showLeftSidebarWidth ? leftSidebarWidth : 'auto' }}>
                 <Breadcrumb />
                 <main>
