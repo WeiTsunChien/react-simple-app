@@ -1,27 +1,27 @@
 import { useState } from 'react';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 
 const AddTodo = (props) => {
     const { addTodo } = props;
-    const [todo, setTodo] = useState('');
+    const [title, setTitle] = useState('');
 
     const submitHandler = (event) => {
         event.preventDefault();
 
-        if (!todo) {
+        if (!title) {
             alert('請填寫事項');
             return;
         }
 
-        const todoObj = {
+        const todo = {
             id: nanoid(),
-            todo: todo,
+            title: title,
             done: false,
             isEdit: false
         }
 
-        addTodo(todoObj);
-        setTodo('');
+        addTodo(todo);
+        setTitle('');
     }
 
     return (
@@ -30,8 +30,8 @@ const AddTodo = (props) => {
                 <input type="text"
                     className="form-control"
                     placeholder="輸入待辦事項"
-                    value={todo}
-                    onChange={(event) => { setTodo(event.target.value) }} />
+                    value={title}
+                    onChange={(event) => { setTitle(event.target.value) }} />
                 <div className="input-group-append">
                     <button type="submit" className="btn btn-primary" >儲存</button>
                 </div>

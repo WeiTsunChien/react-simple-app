@@ -3,69 +3,48 @@ import AddTodo from './AddTodo';
 import List from './List';
 
 const StateTodo = () => {
-    const [todoList, setTodoList] = useState([
-        { id: 1, todo: '發紅包', done: false, isEdit: false },
-        { id: 2, todo: '打掃', done: false, isEdit: false },
-        { id: 3, todo: '煮飯', done: false, isEdit: false }
+    const [todos, setTodos] = useState([
+        { id: 1, title: '發紅包', done: false, isEdit: false },
+        { id: 2, title: '打掃', done: false, isEdit: false },
+        { id: 3, title: '煮飯', done: false, isEdit: false }
     ]);
 
-    const addTodo = (todoObj) => {
-        setTodoList([todoObj, ...todoList]);
+    const addTodo = (todo) => {
+        setTodos([todo, ...todos]);
     }
 
-    const setDone = (id, done) => {
-        const list = todoList.map((todoObj) => {
-            if (todoObj.id == id) {
-                todoObj.done = done;
-            }
-            return todoObj;
-        });
-
-        setTodoList(list);
-    }
-
-    const setIsEdit = (id, isEdit) => {
-        const list = todoList.map((todoObj) => {
-            if (todoObj.id == id) {
-                todoObj.isEdit = isEdit;
-            }
-            return todoObj;
-        });
-
-        setTodoList(list);
-    }
-
-    const editTodo = (id, todo) => {
-        if (!todo) {
+    const updateTodo = (id, propName, value) => {
+        if (propName == 'title' && !value) {
             alert('請填寫事項');
             return;
         }
 
-        const list = todoList.map((todoObj) => {
-            if (todoObj.id == id) {
-                todoObj.todo = todo;
-                todoObj.isEdit = false;
+        const list = todos.map((todo) => {
+            if (todo.id == id) {
+                todo[propName] = value;
+
+                if (propName == 'title') {
+                    todo.isEdit = false;
+                }
             }
-            return todoObj;
+            return todo;
         });
 
-        setTodoList(list);
+        setTodos(list);
     }
 
     const deleteTodo = (id) => {
         if (window.confirm('確定刪除？')) {
-            const list = todoList.filter(x => x.id != id);
-            setTodoList(list);
+            const list = todos.filter(x => x.id != id);
+            setTodos(list);
         }
     }
 
     return (
         <>
             <AddTodo addTodo={addTodo} />
-            <List todoList={todoList}
-                setDone={setDone}
-                setIsEdit={setIsEdit}
-                editTodo={editTodo}
+            <List todos={todos}
+                updateTodo={updateTodo}
                 deleteTodo={deleteTodo} />
         </>
     );

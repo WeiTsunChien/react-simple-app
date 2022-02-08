@@ -2,10 +2,10 @@ import React from 'react';
 import Item from './Item';
 
 const List = (props) => {
-    const { todoList, setDone, setIsEdit, editTodo, deleteTodo } = props;
+    const { todos, updateTodo, deleteTodo } = props;
 
     //array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
-    const doneCount = todoList.reduce((count, todo) => {
+    const doneCount = todos.reduce((count, todo) => {
         return todo.done ? count + 1 : count;
     }, 0);
 
@@ -21,13 +21,11 @@ const List = (props) => {
                 </thead>
                 <tbody>
                     {
-                        todoList.map((todo) => {
+                        todos.map((todo) => {
                             return (
                                 <Item key={todo.id}
                                     {...todo}
-                                    setDone={setDone}
-                                    setIsEdit={setIsEdit}
-                                    editTodo={editTodo}
+                                    updateTodo={updateTodo}
                                     deleteTodo={deleteTodo} />
                             )
                         })
@@ -36,7 +34,7 @@ const List = (props) => {
                 <tfoot>
                     <tr className="table-danger">
                         <td colSpan={3}>
-                            已經完成: {doneCount}, 總數: {todoList.length}
+                            已經完成: {doneCount}, 總數: {todos.length}
                         </td>
                     </tr>
                 </tfoot>

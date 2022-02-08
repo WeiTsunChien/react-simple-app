@@ -6,18 +6,6 @@ $bgColorPrimary: white;
 $bgColorNotUse: #eee;
 $myBorder: 1px solid #ccc;
 
-//$colorPrimaryLight
-//$colorPrimary:
-//$colorPrimaryDark
-
-$bgcPrimaryLight:#b3ffff;
-$bgcPrimary:#009999;
-$bgcPrimaryDark:#006666;
-
-//$borderPrimaryLight
-//$borderPrimary
-//$borderPrimaryDark
-
 html {
     font-size: 20px;
     color: $fontColorPrimary;
@@ -38,7 +26,7 @@ input[type=checkbox]{
 
 #site-header {
     border-bottom: $myBorder;
-    background-color: $bgcPrimary;
+    background-color: $bgColorPrimary;
     padding: 0 1rem;
 }
 
@@ -60,7 +48,7 @@ input[type=checkbox]{
     z-index: 3;
     border-right: $myBorder;
     overflow: auto;
-    background-color: $bgcPrimary;
+    background-color: $bgColorPrimary;
 }
 
 #left-sidebar-overlay {
@@ -88,7 +76,7 @@ input[type=checkbox]{
     margin: 0 -15px 0.5rem -15px;
     padding: 0.5rem 15px;
     border-radius: unset;
-    background-color: $bgcPrimaryLight;
+    background-color: $bgColorPrimary;
     border-bottom: $myBorder;
 }
 
@@ -100,7 +88,7 @@ input[type=checkbox]{
     height: $siteFooterHeight;
     border-top: $myBorder;
     padding: 0.5rem 15px;
-    background-color: $bgcPrimaryLight;
+    background-color: $bgColorPrimary;
 }
 
 @media (max-width: 991px) {
