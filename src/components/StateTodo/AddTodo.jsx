@@ -17,7 +17,7 @@ const AddTodo = (props) => {
             id: nanoid(),
             title: title,
             done: false,
-            isEdit: false
+            isEditMode: false
         }
 
         addTodo(todo);

@@ -4,9 +4,9 @@ import List from './List';
 
 const StateTodo = () => {
     const [todos, setTodos] = useState([
-        { id: 1, title: '發紅包', done: false, isEdit: false },
-        { id: 2, title: '打掃', done: false, isEdit: false },
-        { id: 3, title: '煮飯', done: false, isEdit: false }
+        { id: 1, title: '發紅包', done: false, isEditMode: false },
+        { id: 2, title: '打掃', done: false, isEditMode: false },
+        { id: 3, title: '煮飯', done: false, isEditMode: false }
     ]);
 
     const addTodo = (todo) => {
@@ -24,7 +24,7 @@ const StateTodo = () => {
                 todo[propName] = value;
 
                 if (propName == 'title') {
-                    todo.isEdit = false;
+                    todo.isEditMode = false;
                 }
             }
             return todo;

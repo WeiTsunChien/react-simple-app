@@ -1,4 +1,3 @@
-import React from 'react';
 import Item from './Item';
 
 const List = (props) => {
@@ -32,7 +31,7 @@ const List = (props) => {
                     }
                 </tbody>
                 <tfoot>
-                    <tr className="table-danger">
+                    <tr className="table-danger text-right">
                         <td colSpan={3}>
                             已經完成: {doneCount}, 總數: {todos.length}
                         </td>

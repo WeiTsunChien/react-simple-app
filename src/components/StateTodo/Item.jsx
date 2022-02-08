@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Item = (props) => {
-    const { id, title, done, isEdit, updateTodo, deleteTodo } = props;
+    const { id, title, done, isEditMode, updateTodo, deleteTodo } = props;
     const [editedTitle, setEditedTitle] = useState(title);
 
     return (
@@ -10,30 +10,30 @@ const Item = (props) => {
                 <input type="checkbox" checked={done} onChange={(event) => { updateTodo(id, 'done', event.target.checked) }} />
             </td>
             <td>
-                <p style={{ display: isEdit ? 'none' : 'block' }}>{title}</p>
+                <p style={{ display: isEditMode ? 'none' : 'block' }}>{title}</p>
                 <input type="text"
                     className='form-control'
-                    style={{ display: isEdit ? 'block' : 'none' }}
+                    style={{ display: isEditMode ? 'block' : 'none' }}
                     value={editedTitle}
                     onChange={(event) => { setEditedTitle(event.target.value) }} />
             </td>
             <td>
                 <button type="button"
                     className="btn btn-outline-primary mr-2"
-                    style={{ display: isEdit ? 'none' : 'inline-block' }}
-                    onClick={() => { updateTodo(id, 'isEdit', true) }}>
+                    style={{ display: isEditMode ? 'none' : 'inline-block' }}
+                    onClick={() => { updateTodo(id, 'isEditMode', true) }}>
                     修改
                 </button>
                 <button type="button"
                     className="btn btn-primary mr-2"
-                    style={{ display: isEdit ? 'inline-block' : 'none' }}
+                    style={{ display: isEditMode ? 'inline-block' : 'none' }}
                     onClick={() => { updateTodo(id, 'title', editedTitle) }}>
                     儲存
                 </button>
                 <button type="button"
                     className="btn btn-outline-primary mr-2"
-                    style={{ display: isEdit ? 'inline-block' : 'none' }}
-                    onClick={() => { updateTodo(id, 'isEdit', false) }}>
+                    style={{ display: isEditMode ? 'inline-block' : 'none' }}
+                    onClick={() => { updateTodo(id, 'isEditMode', false) }}>
                     取消
                 </button>
                 <button type='button'
