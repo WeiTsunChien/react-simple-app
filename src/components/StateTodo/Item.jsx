@@ -1,8 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Item = (props) => {
     const { id, title, done, isEditMode, updateTodo, deleteTodo } = props;
     const [editedTitle, setEditedTitle] = useState(title);
+    const refTitle = useRef();
+
+    useEffect(() => {
+        if (isEditMode) {
+            refTitle.current.focus();
+        }
+    }, [isEditMode]);
 
     return (
         <tr>
@@ -15,6 +22,7 @@ const Item = (props) => {
                     className='form-control'
                     style={{ display: isEditMode ? 'block' : 'none' }}
                     value={editedTitle}
+                    ref={refTitle}
                     onChange={(event) => { setEditedTitle(event.target.value) }} />
             </td>
             <td>
