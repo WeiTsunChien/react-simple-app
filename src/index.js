@@ -7,13 +7,16 @@ import reducers from './reducers';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/sass/site.scss';
+import { BrowserRouter } from "react-router-dom";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </StrictMode>,
   document.getElementById('root')
