@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as routes from './constants/routes';
 
 import Layout from './components/layout/Layout';
-import Home from './components/Home';
-import StateTodo from './components/StateTodo';
+import Home from './pages/Home';
+import StateTodo from './pages/StateTodo';
 import NoPage from './components/other/NoPage';
 
 const App = () => {

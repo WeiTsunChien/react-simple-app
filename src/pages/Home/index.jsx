@@ -1,6 +1,8 @@
-import * as routes from '../constants/routes';
+import * as routes from '../../constants/routes';
 
-const Home = () => {
+const Home = (props) => {
+    console.log(props);
+
     return (
         <div className="row">
             <div className="col-lg-6">

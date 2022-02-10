@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import AddTodo from './AddTodo';
 import List from './List';
 
-const StateTodo = () => {
+const StateTodo = (props) => {
+    console.log("StateTodo props", props);
     const [todos, setTodos] = useState([
         { id: 1, title: '發紅包', done: false, isEditMode: false },
         { id: 2, title: '打掃', done: false, isEditMode: false },
